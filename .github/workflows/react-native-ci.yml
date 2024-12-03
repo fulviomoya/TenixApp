@@ -39,7 +39,7 @@ jobs:
       - name: Build ${{ matrix.platform }}
         run: |
           if [ "${{ matrix.platform }}" == "android" ]; then
-            cd android && ./gradlew assembleRelease
+            cd android && ./gradlew assembleDebug
           elif [ "${{ matrix.platform }}" == "ios" ]; then
             xcodebuild -workspace ios/YourApp.xcworkspace -scheme YourApp -configuration Release -sdk iphoneos
           fi
