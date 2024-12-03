@@ -34,6 +34,12 @@ jobs:
       # Step 4: Run TypeScript checks
       - name: TypeScript Check
         run: npx tsc 
+      
+      - name: Update Java version
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '21'  
 
       # Step 5: Build for each platform using a conditional matrix
       - name: Build ${{ matrix.platform }}
